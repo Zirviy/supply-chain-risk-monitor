@@ -1,9 +1,32 @@
+# Large raw/reference data — not needed for dashboard
 data/raw/
+data/reference/
+
+# Large processed files — dashboard only needs 3 small CSVs
 data/processed/feature_matrix.csv
+data/processed/india_trade_raw.csv
+data/processed/india_trade_vulnerability.csv
+data/processed/supply_chain_nodes.csv
+data/processed/node_graph_edges.csv
+data/processed/sector_import_dependency.csv
+data/processed/alert_state.json
+
+# ML models
 models/
 mlruns/
+
+# Python
 venv/
-.env
 __pycache__/
 *.pyc
+*.pyo
+
+# Secrets
+.env
+
+# Logs
 logs/
+
+# Windows
+Thumbs.db
+desktop.ini

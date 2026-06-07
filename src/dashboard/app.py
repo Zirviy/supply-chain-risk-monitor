@@ -266,9 +266,12 @@ def load_events() -> pd.DataFrame:
 def load_feature_matrix_for_node(node_id: str) -> pd.DataFrame:
     """
     Loads only rows for a specific node_id from feature_matrix.csv.
-    Reads full file but filters immediately — avoids holding 354k rows in memory.
-    Uses chunksize for memory efficiency on the large file.
+    Returns empty DataFrame if file not found (e.g. hosted deployment
+    where feature_matrix.csv is excluded due to size — 354k rows, ~200MB).
     """
+    if not os.path.exists(FEATURE_MATRIX_PATH):
+        return pd.DataFrame()
+
     chunks = []
     for chunk in pd.read_csv(
         FEATURE_MATRIX_PATH,
@@ -443,7 +446,12 @@ def page_trend_explorer() -> None:
         fm = load_feature_matrix_for_node(node_id)
 
     if fm.empty:
-        st.warning(f"No historical data found in feature_matrix.csv for node {node_id}.")
+        st.info(
+            "📊 **Historical trend chart not available in this deployment.**\n\n"
+            "The feature matrix (354,000 rows × 22 features × 372 daily snapshots) "
+            "is too large to host on Streamlit Cloud. "
+            "The current risk scores, events, and AI insights below are fully live."
+        )
     else:
         # Build a trend proxy: static_risk_score + normalized event activity
         # disruption_prob only exists for the latest snapshot (predict.py output)

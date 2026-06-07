@@ -3,7 +3,6 @@ data/raw/
 data/reference/
 
 # Large processed files — dashboard only needs 3 small CSVs
-data/processed/feature_matrix.csv
 data/processed/india_trade_raw.csv
 data/processed/india_trade_vulnerability.csv
 data/processed/supply_chain_nodes.csv

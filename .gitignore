@@ -1,0 +1,9 @@
+data/raw/
+data/processed/feature_matrix.csv
+models/
+mlruns/
+venv/
+.env
+__pycache__/
+*.pyc
+logs/

@@ -1,0 +1,42 @@
+data_collection:
+  gdelt:
+    update_interval_minutes: 15
+    cameo_codes_of_interest:
+      - "14"   # protest
+      - "17"   # coerce
+      - "18"   # assault
+      - "19"   # fight
+      - "20"   # mass violence
+      - "0231" # natural disaster appeal
+  newsapi:
+    update_interval_hours: 1
+    keywords:
+      - "port strike"
+      - "supply chain disruption"
+      - "factory fire"
+      - "shipping delay"
+      - "trade sanctions"
+      - "flood manufacturing"
+      - "earthquake factory"
+      - "port closure"
+  weather:
+    update_interval_hours: 6
+
+ml:
+  risk_classifier:
+    threshold: 0.6
+    retrain_interval_days: 7
+  severity_estimator:
+    levels: [1, 2, 3, 4, 5]
+  drift:
+    psi_threshold: 0.2
+
+genai:
+  model: "gpt-4o"
+  max_tokens: 500
+  temperature: 0
+  risk_spike_threshold: 0.7
+
+alerting:
+  risk_spike_threshold: 0.7
+  check_interval_hours: 1

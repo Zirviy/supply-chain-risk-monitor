@@ -1,0 +1,11 @@
+sector,total_import_usd,top_source_country,top_source_share_pct,hhi,vulnerability_score,n_countries
+Textiles,36994.86,China,41.26,0.1973,0.518,96
+Electronics,581113.9000000001,China,47.44,0.2531,0.5106,120
+Manufacturing,438234.45999999996,China,40.4,0.1903,0.4588,125
+Chemicals,536614.28,China,30.66,0.1199,0.4153,119
+Automotive,59973.72000000001,China,27.24,0.1429,0.359,93
+Agri,117516.56999999999,Indonesia,36.64,0.2076,0.3582,93
+Metals & Mining,280819.08,China,18.28,0.0752,0.3201,118
+Other,1172513.7300000002,Switzerland,15.41,0.0777,0.2701,127
+Pharma,20944.230000000003,Switzerland,14.27,0.074,0.2379,94
+Energy,1336397.73,Iraq,17.61,0.1137,0.2372,97
